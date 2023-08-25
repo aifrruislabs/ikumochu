@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\DatasetController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Upload Dataset
+Route::post('/upload/dataset', [DatasetController::class, 'upload_dataset'])->name('upload-dataset');
+
+//Dataset
+Route::get('/datasets', [Controller::class, 'datasets']);
+
+//Dataset Contexts
+Route::get('/dataset/contexts', [Controller::class, 'dataset_contexts']);
+
+//Process Dataset
+Route::get('/process/dataset',  [Controller::class, 'process_dataset']);
+
+//Dashboard Page
+Route::get('/dashboard', [Controller::class, 'dashboard']);
+
+//Index Page
+Route::get('/', [Controller::class, 'index']);

@@ -1,0 +1,56 @@
+table {
+    width: 100%;
+}
+
+table tr td {
+    padding-top: 15px;
+}
+
+.color-red {
+    color:red;
+}
+
+.color-green {
+    color: green;
+}
+
+.fa-plus {
+    font-size: 20px;
+}
+
+.center {
+    text-align: center;
+}
+
+.left { 
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.float-left {
+    float: left;
+    text-align: left;
+}
+
+.float-right {
+    float: right;
+    text-align: right;
+}
+
+.navbar-custom {
+    background-color: #eb6a5d;
+    border-radius: 0px;
+    color: black;
+}
+
+
+.navbar-custom .navbar-brand {
+    color: white;
+}
+
+.navbar-custom li a {
+    color: white;
+}
