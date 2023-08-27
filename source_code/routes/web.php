@@ -30,5 +30,14 @@ Route::get('/process/dataset',  [Controller::class, 'process_dataset']);
 //Dashboard Page
 Route::get('/dashboard', [Controller::class, 'dashboard']);
 
+//Login Page
+Route::get('/login', [Controller::class, 'login']);
+
+//logout
+Route::get('/logout', [Controller::class, 'postLogout']);
+
+//Post Login
+Route::post('/postLogin', [Controller::class, 'postLogin'])->name('postLogin');
+
 //Index Page
 Route::get('/', [Controller::class, 'index']);

@@ -34,24 +34,33 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;              Ikumochu</a>
+            <a class="navbar-brand" href="/index.php">
+              <i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;Ikumochu
+            </a>
           </div>
       
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="active">
-                <a href="/dashboard">Dashboard</a>
-              </li>
-              <li><a href="/datasets">Datasets</a></li>
-              <li><a href="/dataset/contexts">Dataset Contexts</a></li>
-              <li><a href="/process/dataset">Process Dataset</a></li>
-             
+              @if (Auth::check())
+                <li class="active">
+                  <a href="/index.php/dashboard">Dashboard</a>
+                </li>
+                <li><a href="/index.php/datasets">Datasets</a></li>
+                <li><a href="/index.php/dataset/contexts">Dataset Contexts</a></li>
+                <li><a href="/index.php/process/dataset">Process Dataset</a></li>
+              @endif
             </ul>
            
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Login</a></li>
-              <li><a href="#">My Account</a></li>
+              
+              @if (Auth::check())
+                <li><a href="#">Welcome {{ Auth::User()->name }}</a></li>
+                <li><a href="/index.php/logout">Logout</a></li>
+              @else
+                <li><a href="/index.php/login">Login</a></li>
+              @endif
+              
             </ul>
           </div>
         </div>

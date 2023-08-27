@@ -11,7 +11,7 @@
 
         <div class="row">
             <div class="col-md-4">
-                <h4>Datasets (0)</h4>
+                <h4>Datasets ({{ $datasets->count() }})</h4>
             </div>
 
             <div class="col-md-8 float-right">
@@ -48,7 +48,7 @@
               <td>{{ $dataset->dataset_name }}</td>
               <td>{{ $dataset->dataset_info }}</td>
               <td>
-                {!! $cols_data !!}
+                <button class="btn btn-success form-control">Columns (0)</button>
               </td>
               <td>
                 <button class="btn btn-success form-control">Contexts (0)</button>

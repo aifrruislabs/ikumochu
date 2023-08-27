@@ -6,6 +6,11 @@ table tr td {
     padding-top: 15px;
 }
 
+.border-form { 
+    border: 2px solid #eee;
+    border-radius: 10px;;
+}
+
 .color-red {
     color:red;
 }

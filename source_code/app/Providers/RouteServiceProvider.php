@@ -25,9 +25,6 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //Remove Index PHP From URL
-        $this->removeIndexPHPFromURL();
-
         //API Rate Limiter
         RateLimiter::for('api', function (Request $request) {
             return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
@@ -42,22 +39,5 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/web.php'));
         });
     }
-
-     /**
-     * Write code on Method
-     *
-     * @return response()
-     */
-    protected function removeIndexPHPFromURL()
-    {
-        if (Str::contains(request()->getRequestUri(), '/index.php/')) {
-            $url = str_replace('index.php/', '', request()->getRequestUri());
-  
-            if (strlen($url) > 0) {
-                header("Location: $url", true, 301);
-                exit;
-            }
-        }
-    }
-    
+ 
 }
