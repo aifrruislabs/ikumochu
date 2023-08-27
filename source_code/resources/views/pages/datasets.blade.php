@@ -45,8 +45,8 @@
               @endphp
             <tr>
               <td>{{ $id += 1 }}</td>
-              <td>Dataset Title</td>
-              <td>Dataset Info</td>
+              <td>{{ $dataset->dataset_name }}</td>
+              <td>{{ $dataset->dataset_info }}</td>
               <td>
                 {!! $cols_data !!}
               </td>
